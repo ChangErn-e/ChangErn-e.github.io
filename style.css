@@ -30,9 +30,9 @@ section nav{
 }
 
 section nav .logo img{
-    width:100px;
+    width:15%;
     cursor: pointer;
-    margin: 7px 0;
+    margin: 2% 0;
 }
 
 section nav ul{
@@ -41,20 +41,21 @@ section nav ul{
 
 section nav ul li{
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 2vh;
 }
 
 section nav ul li a{
     text-decoration: none;
     color:black;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 2vh;
+    
 }
 
 section nav ul li a::after{
     content:'';
     width:0;
-    height: 2px;
+    height: 2%;
     background:#fac031;
     display: block;
     transition: 0.2s linear;
@@ -65,9 +66,9 @@ section nav ul li a:hover{
 }
 
 section nav .icon i{
-    font-size: 18px;
+    font-size: 100%;
     color: black;
-    margin: 0 5px;
+    margin: 0 1vh;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -185,136 +186,75 @@ padding: 70px 0;
 }
 
 /*Menu*/
- .menu{
-     width: 100%;
-     padding: 70px 0;
- }
+.menu {
+    width: 100%;
+    padding: 70px 0;
+}
 
- .menu h1{
+.menu h1 {
     font-size: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
- }
-  
- .menu h1 span{
-     font-size: 60;
-     color: #fac031;
- }
+}
 
- .menu .menu_box{
+.menu h1 span {
+    font-size: 60;
+    color: #fac031;
+}
+
+.menu .menu_box {
     width: 90%;
-    margin: auto ;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 15px;
- }
+}
 
- .menu .menu_box .menu_card{
+.menu .menu_box .menu_card {
     width: 350px;
-    height:480px;
+    height: 480px;
     padding-top: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
- }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: grab; /* Change cursor to indicate draggable */
+    border: 2px  #fac031; /* Dashed border */
+    transition: 0.3s;
+}
 
- .menu .menu_box .menu_card .menu_image{
-     width: 300px;
-     height: 245px;
-     margin: 0 auto;
-     overflow: hidden;
+.menu .menu_box .menu_card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    border-color: #000; /* Change border color on hover */
+}
 
- }
+.menu .menu_box .menu_card .menu_image {
+    width: 300px;
+    height: 245px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
-
- .menu .menu_box .menu_card .menu_image img{
+.menu .menu_box .menu_card .menu_image img {
     width: 100%;
     height: 100%;
-    object-fit:cover ;
+    object-fit: cover;
     object-position: center;
     transition: 0.3s;
- }
-        
-.menu .menu_box.menu_card.menu_image:hover img{ 
+    user-select: none; /* Prevent text/image selection while dragging */
+}
+
+.menu .menu_box .menu_card .menu_image:hover img {
     transform: scale(1.1);
 }
 
-.menu .menu_box.menu_card .small_card{
-    width: 45px;
-    height: 45px;
-    float: right;
-    position: relative;
-    top: -240px;
-    right: -8px;
-    opacity: 1;
-    border-radius: 7px;
-    transition: 0.3s;
+/* Dragging style */
+.menu .menu_box .menu_card:active {
+    cursor: grabbing;
+    opacity: 0.8; /* Reduce opacity when grabbing */
+    transform: scale(1.03); /* Slightly shrink while dragging */
 }
 
-.menu .menu_box .menu_card:hover .small_card{
-    position: relative;
-    top: -240px;
-    right: 20px;
-    opacity: 1;
-}
-
-.menu .menu_box.menu_card .small_card i{
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 50px;
-    color: #000;
-    cursor: pointer;
-    text-shadow: 0 0 6px #000;
-    transition: 0.2s;
-}
-
-    
-.menu .menu_box.menu_card .small_card i:hover{
-    color: #fac031;
-}
-
-
-
-.menu .menu_box.menu_card .menu_info p{
-    text-align: center;
-    margin-top: 8px;
-    line-height: 21px;
-    
-}
-
-.menu .menu_box.menu_card .menu_info h3{
-    text-align: center;
-    margin-top: 10px;
-  
-}
-
-
-.menu .menu_box .menu_card .menu_info .menu_icon{
-    color: #fac031;
-    text-align: center;
-    margin: 10px 0 20px 0 ;
-}
-
-.menu .menu_box.menu_card .menu_info .menu_btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color:#fff;
-    background: #000;
-    padding: 8px 10px;
-    margin: 0 80px;
-    transition: 0.3s;
-  
-}
-
-.menu .menu_box.menu_card .menu_info .menu_btn a{
-    background: #fac031;
-
-}
 
 
 
@@ -372,21 +312,21 @@ padding: 70px 0;
 
 /*Order*/
 
-.order{
+.order {
     width: 100%;
     height: 100vh;
     padding: 70px 0;
 }
 
-.order h1{
+.order h1 {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000;
-    font-size: 50;
+    font-size: 50px;
 }
 
-.order h1 span{
+.order h1 span {
     width: 60px;
     color: #fac031;
     margin-right: 55px;
@@ -396,62 +336,59 @@ padding: 70px 0;
     display: flex; /* Align items in a row */
     align-items: flex-start; /* Align form and image at the top */
     gap: 20px; /* Add space between the image and form */
-  }
-  
-  .order_image {
+}
+
+.order_image {
     flex: 1; /* Image will take up 1 part of the space */
-  }
-  
-  form {
+}
+
+form {
     flex: 2; /* Form will take up 2 parts of the space */
     display: flex;
     flex-direction: column; /* Keep inputs stacked vertically */
     gap: 10px; /* Add space between input fields */
-  }
-  
-  form .input p {
+}
+
+form .input p {
     margin: 0 0 5px; /* Add space below labels */
     font-size: 14px;
     font-weight: bold;
-  }
-  
-  form .input input {
+}
+
+form .input input {
     width: 100%; /* Make inputs fill the form width */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-  }
+}
 
-  .order_main .order_image img{
-    width: 1000px;
-    
-  }
+.order_main .order_image img {
+    width: 800px; /* Make the image smaller */
+}
 
-  .order.order_main form{
+.order.order_main form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0 10px;
-  }
+}
 
-  .order .order_main form .input p{
+.order .order_main form .input p {
     line-height: 25px;
+}
 
-  }
-
-  .order .order_main form .input input{
+.order .order_main form .input input {
     width: 300px;
     height: 35px;
     padding: 0 10px;
     border: 2px solid #cccccc;
     background: #eeee;
     outline: none;
-    border-radius:3px ;
+    border-radius: 3px;
 }
 
-
-.order.order_main form .order_btn{
-    pad: 10px 0;
+.order.order_main form .order_btn {
+    pad: 10% 0;
     background: #fac031;
     color: white;
     width: 40%;
@@ -459,6 +396,7 @@ padding: 70px 0;
     margin-top: 20px;
     text-decoration: none;
 }
+
 
 
 /*Footer*/
@@ -505,3 +443,63 @@ footer .footer_main .footer_tag i:hover{
     margin: 30px;
 }
 
+/*mobile responsive*/
+@media screen and (max-width: 768px) {
+    .main_container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+
+    
+.main_content {
+    text-align: center;
+    margin-bottom: 4rem;
+
+}
+
+.main_content h1{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+
+}
+
+.main_content h2{
+font-size: 3rem;
+
+}
+
+.main_contentp{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+    
+}
+
+@media screen and (max-width: 480px) {
+    .main_content h1{
+        font-size: 2rem;
+        margin-top: 3rem;
+
+    }
+
+    .main_content h2{
+        font-size: 2rem;
+
+    }
+
+    .main_content p{
+        margin-top: 2rem;
+        font-size: 1.5rem;
+
+    }
+
+    .main_btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0;
+    }
+}
